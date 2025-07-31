@@ -1,0 +1,38 @@
+-------------------------------------------------RECURSIVE BUBBLE SORT---------------------------------------------------------
+import java.util.*;
+class NewClass1{
+  public static void Bubblesort(int nums[],int n){
+    if(n==1)
+      return;
+    int didswap=0;
+    for(int j=0;j<n-1;j++){
+      if(nums[j]>nums[j+1]){
+        int temp=nums[j];
+        nums[j]=nums[j+1];
+        nums[j+1]=temp;
+        didswap=1;
+      }
+    }
+      if (didswap==0) return;
+      Bubblesort(nums,n-1);
+    
+  }
+  public static void swap(int nums[],int j){
+    int temp= nums[j];
+    nums[j]=nums[j+1];
+    nums[j+1]=temp;
+  }
+  
+  public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int nums[]=new int[n];
+    for(int i=0;i<n;i++){
+      nums[i]=sc.nextInt();
+    }
+    Bubblesort(nums,n);
+     for(int i=0;i<n;i++){
+      System.out.println(nums[i]);
+  }
+}
+}
